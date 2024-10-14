@@ -17,6 +17,8 @@ const getAllJabatan = async (req, res) => {
 }
 
 const getJabatanById = async (req, res) => {
+    const {id} = req.params;
+
     try {
         const [data] = await JabatanModel.getJabatanById(id);
         res.json({
