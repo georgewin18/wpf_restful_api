@@ -6,7 +6,7 @@ const getAllDepartemen = () => {
 }
 
 const getDepartemenById = (id) => {
-    const SQLQuery = `  SELECT * FROM depatemen
+    const SQLQuery = `  SELECT * FROM departemen
                         WHERE id=${id}`;
     return dbPool.execute(SQLQuery);
 }
