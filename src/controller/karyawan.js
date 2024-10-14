@@ -1,4 +1,3 @@
-const { createServer } = require('mysql2');
 const KaryawanModel = require('../models/karyawan');
 
 const getAllKaryawan = async (req, res) => {
@@ -23,7 +22,41 @@ const getKaryawanById = async (req, res) => {
     try {
         const [data] = await KaryawanModel.getKaryawanById(id);
         res.json({
-            message: 'GET karyawan success',
+            message: 'GET karyawan by id success',
+            data: data,
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: 'Server Error',
+            serverMessage: error,
+        })
+    }
+}
+
+const getKaryawanByDepartemenId = async (req, res) => {
+    const {id} = req.params;
+
+    try {
+        const [data] = await KaryawanModel.getKaryawanByDepartemenId(id);
+        res.json({
+            message: 'GET karyawan by departemen id success',
+            data: data,
+        })
+    } catch (error) {
+        res.status(500).json({
+            message: 'Server Error',
+            serverMessage: error,
+        })
+    }
+}
+
+const getKaryawanByJabatanId = async (req, res) => {
+    const {id} = req.params;
+
+    try {
+        const [data] = await KaryawanModel.getKaryawanByJabatanId(id);
+        res.json({
+            message: 'GET karyawan by jabatan id success',
             data: data,
         })
     } catch (error) {
@@ -47,7 +80,7 @@ const createNewKaryawan = async (req, res) => {
     try {
         await KaryawanModel.createNewKaryawan(body);
         res.status(201).json({
-            message: 'CREATE new karyawan sucess',
+            message: 'CREATE new karyawan success',
             data: body,
         })
     } catch (error) {
@@ -63,7 +96,7 @@ const updateKaryawan = async (req, res) => {
     const {body} = req.params;
 
     try {
-        await KaryawanModel.updateKaryawan(body, id)
+        await KaryawanModel.updateKaryawan(body, id);
         res.status(201).json({
             message: 'UPDATE karyawan success',
             data : {
@@ -99,6 +132,8 @@ const deleteKaryawan = async (req, res) => {
 module.exports = {
     getAllKaryawan,
     getKaryawanById,
+    getKaryawanByDepartemenId,
+    getKaryawanByJabatanId,
     createNewKaryawan,
     updateKaryawan,
     deleteKaryawan,
