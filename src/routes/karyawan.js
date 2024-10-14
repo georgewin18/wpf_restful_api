@@ -10,7 +10,7 @@ router.get('/:id', KaryawanController.getKaryawanById);
 
 router.get('/departemen/:id', KaryawanController.getKaryawanByDepartemenId);
 
-router.get('jabatan/:id', KaryawanController.getKaryawanByJabatanId);
+router.get('/jabatan/:id', KaryawanController.getKaryawanByJabatanId);
 
 router.patch('/:id', KaryawanController.updateKaryawan);
 
