@@ -1,7 +1,7 @@
 const dbPool = require('../config/database');
 
 const getAllKaryawan = () => {
-    const SQLQuery =   `SELECT * FROM karyawan`;
+    const SQLQuery = `SELECT * FROM karyawan`;
     return dbPool.execute(SQLQuery);
 
 }
@@ -9,6 +9,16 @@ const getAllKaryawan = () => {
 const getKaryawanById = (id) => {
     const SQLQuery = `  SELECT * FROM karyawan
                         WHERE id=${id}`;
+    return dbPool.execute(SQLQuery);
+}
+
+const getKaryawanByDepartemenId = (departemenId) => {
+    const SQLQuery = `SELECT * FROM karyawan WHERE departemen_id=${departemenId}`;
+    return dbPool.execute(SQLQuery);
+}
+
+const getKaryawanByJabatanId = (jabatanId) => {
+    const SQLQuery = `SELECT * FROM karyawan WHERE departemen_id=${jabatanId}`;
     return dbPool.execute(SQLQuery);
 }
 
