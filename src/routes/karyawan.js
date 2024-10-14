@@ -8,8 +8,8 @@ router.get('/', KaryawanController.getAllKaryawan);
 
 router.get('/:id', KaryawanController.getKaryawanById);
 
-router.patch(':id', KaryawanController.updateKaryawan);
+router.patch('/:id', KaryawanController.updateKaryawan);
 
-router.delete(':id', KaryawanController.deleteKaryawan);
+router.delete('/:id', KaryawanController.deleteKaryawan);
 
 module.exports = router;

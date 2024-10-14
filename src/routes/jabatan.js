@@ -8,8 +8,8 @@ router.get('/', JabatanController.getAllJabatan);
 
 router.get('/:id', JabatanController.getJabatanById);
 
-router.patch(':id', JabatanController.updateJabatan);
+router.patch('/:id', JabatanController.updateJabatan);
 
-router.delete(':id', JabatanController.deleteJabatan);
+router.delete('/:id', JabatanController.deleteJabatan);
 
 module.exports = router;
