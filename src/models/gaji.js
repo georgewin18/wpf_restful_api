@@ -19,5 +19,5 @@ const createNewGaji = (body) => {
 module.exports = {
     getAllGaji,
     getGajiById,
-    createNewJabatan,
+    createNewGaji,
 }
