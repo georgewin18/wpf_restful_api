@@ -55,3 +55,9 @@ const createNewAbsensi = async (req, res) => {
         })
     }
 }
+
+module.exports = {
+    getAllAbsensi,
+    getAbsensiById,
+    createNewAbsensi,
+}
