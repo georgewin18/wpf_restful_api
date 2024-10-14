@@ -51,6 +51,8 @@ const deleteKaryawan = (id) => {
 module.exports = {
     getAllKaryawan,
     getKaryawanById,
+    getKaryawanByDepartemenId,
+    getKaryawanByJabatanId,
     createNewKaryawan,
     updateKaryawan,
     deleteKaryawan,
