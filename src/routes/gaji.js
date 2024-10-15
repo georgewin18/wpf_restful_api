@@ -8,4 +8,6 @@ router.get('/', GajiController.getAllGaji);
 
 router.get('/:id', GajiController.getGajiById);
 
+router.get('/karyawan/:id', GajiController.getGajiByKaryawanId);
+
 module.exports = router;

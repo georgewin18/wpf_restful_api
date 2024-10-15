@@ -58,7 +58,13 @@ const createNewDepartemen = async (req, res) => {
 
 const updateDepartemen = async (req, res) => {
     const {id} = req.params;
-    const {body} = req.params;
+    const {body} = req;
+
+    if (!body.nama_departemen) {
+        res.status(400).json({
+            message : "Terdapat kesalahan pada data input"
+        })
+    }
 
     try {
         await DepatemenModel.updateDepartemen(body, id);

@@ -59,7 +59,13 @@ const createNewJabatan = async (req, res) => {
 
 const updateJabatan = async(req, res) => {
     const {id} = req.params;
-    const {body} = req.params;
+    const {body} = req;
+
+    if (!body.nama_jabatan) {
+        res.status(400).json({
+            message: "Terdapat kesalahan pada data input"
+        })
+    }
 
     try {
         await JabatanModel.updateJabatan(body, id);

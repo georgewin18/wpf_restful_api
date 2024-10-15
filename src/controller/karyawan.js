@@ -93,7 +93,7 @@ const createNewKaryawan = async (req, res) => {
 
 const updateKaryawan = async (req, res) => {
     const {id} = req.params;
-    const {body} = req.params;
+    const {body} = req;
 
     try {
         await KaryawanModel.updateKaryawan(body, id);

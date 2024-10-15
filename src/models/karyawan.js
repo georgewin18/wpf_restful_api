@@ -44,7 +44,7 @@ const updateKaryawan = (body, id) => {
 }
 
 const deleteKaryawan = (id) => {
-    const SQLQuery = `DELETE karywan WHERE id=${id}`;
+    const SQLQuery = `DELETE FROM karyawan WHERE id=${id}`;
     return dbPool.execute(SQLQuery);
 }
 

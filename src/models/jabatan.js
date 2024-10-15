@@ -12,7 +12,7 @@ const getJabatanById = (id) => {
 
 const createNewJabatan = (body) => {
     const SQLQuery = `  INSERT INTO jabatan(nama_jabatan)
-                        VALUES ('${body.nama_jabatan})`;
+                        VALUES ('${body.nama_jabatan}')`;
     return dbPool.execute(SQLQuery);
 }
 
@@ -24,7 +24,7 @@ const updateJabatan = (body, id) => {
 }
 
 const deleteJabatan = (id) => {
-    const SQLQuery = `DELETE jabatan WHERE id=${id}`;
+    const SQLQuery = `DELETE FROM jabatan WHERE id=${id}`;
     return dbPool.execute(SQLQuery);
 }
 
